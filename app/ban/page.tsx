@@ -31,12 +31,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 
-export interface MyImage {
-  src: any;
-  alt: string;
-}
-
-export const images: MyImage[] = [
+const images = [
   {
     src: toto,
     alt: "S.T.A.R.",
@@ -79,7 +74,7 @@ const BanPage = () => {
           <CarouselContent className="">
             {/*             {Array.from({ length: 5 }).map((_, index) => (
              */}{" "}
-            {images.map((image, index) => (
+            {images?.map((image, index) => (
               <CarouselItem className="" key={index}>
                 <Compo image={image} />
               </CarouselItem>
@@ -106,11 +101,8 @@ const BanPage = () => {
       </div>
       <ScrollArea className="w-1/2 whitespace-nowrap rounded-md border">
         <div className="flex w-max space-x-4 p-4">
-          {images.map((image) => (
-            <figure
-              key={image.src}
-              className="shrink-0 flex flex-col items-center"
-            >
+          {images?.map((image, index) => (
+            <figure key={index} className="shrink-0 flex flex-col items-center">
               <div className="w-40 overflow-hidden rounded-md">
                 <Image
                   src={image.src}
