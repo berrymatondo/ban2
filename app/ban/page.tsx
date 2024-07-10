@@ -55,7 +55,7 @@ const images = [
   },
   {
     src: toto4,
-    alt: "Cellules de maison",
+    alt: "Cellules de maisons",
     link: "https://cellules.vercel.app/",
   },
   {
