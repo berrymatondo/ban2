@@ -55,7 +55,7 @@ const images = [
   },
   {
     src: toto4,
-    alt: "Cellules de maisons",
+    alt: "Cellules               de maisons",
     link: "https://cellules.vercel.app/",
   },
   {
@@ -77,7 +77,7 @@ const BanPage = () => {
             }),
           ]}
           opts={{ align: "start", loop: true }}
-          className="w-[600px] max-md:w-[400px]"
+          className="w-[600px] max-md:w-[350px]"
         >
           <CarouselContent className="">
             {/*             {Array.from({ length: 5 }).map((_, index) => (
@@ -167,7 +167,7 @@ type CompoProps = {
 const Compo = ({ image }: CompoProps) => {
   const router = useRouter();
   return (
-    <div className="hover:cursor-pointer md:p-1 w-[600px] md:h-[400px]  max-md:w-[400px] max-md:mx-4">
+    <div className="hover:cursor-pointer md:p-1 w-[600px] md:h-[400px]  max-md:w-[350px] max-md:mx-4">
       {/*       <Image src={toto1} alt="xxxx" className="aspect-video" />
        */}{" "}
       <Card onClick={() => router.push(image?.link)}>
