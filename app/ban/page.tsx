@@ -65,7 +65,7 @@ const BanPage = () => {
         <Carousel
           plugins={[
             Autoplay({
-              delay: 4000,
+              delay: 3000,
             }),
           ]}
           opts={{ align: "start", loop: true }}
