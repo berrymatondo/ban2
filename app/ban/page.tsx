@@ -31,37 +31,46 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { BiBuildingHouse } from "react-icons/bi";
 
 const images = [
   {
     src: star,
     alt: "S.T.A.R.",
     link: "",
+    description: "",
   },
   {
     src: pcnc,
     alt: "PCNC",
     link: "",
+    description: "",
   },
   {
     src: toto2,
     alt: "Soins Pastoraux",
     link: "",
+    description: "",
   },
   {
     src: toto3,
     alt: "Annuaire",
     link: "",
+    description: "",
   },
   {
     src: toto4,
     alt: "Cellules               de maisons",
     link: "https://cellules.vercel.app/",
+    description:
+      "Trouver facilement une cellule de maison à proximité de son domicile. Une cellule de maison est un moment où des bien-aimés se réunissent une fois par semaine pour revenir sur la Parole apportée le dimanche.",
   },
   {
     src: toto5,
     alt: "Covoiturage",
     link: "",
+    description: "",
   },
 ];
 
@@ -136,14 +145,19 @@ const BanPage = () => {
                   </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
-                      <AlertDialogTitle>{image.alt}</AlertDialogTitle>
+                      <AlertDialogTitle className="text-blue-800">
+                        {image.alt}
+                      </AlertDialogTitle>
                       <AlertDialogDescription>
-                        Information sur {image.alt}.
+                        {image?.description}
                       </AlertDialogDescription>
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>Annuler</AlertDialogCancel>
-                      <AlertDialogAction className="">
+                      <AlertDialogAction
+                        onClick={() => router.push(image.link)}
+                        className="bg-blue-900"
+                      >
                         Continuer
                       </AlertDialogAction>
                     </AlertDialogFooter>
@@ -155,6 +169,16 @@ const BanPage = () => {
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
+      <Link
+        href="https://cellules.vercel.app/benelux"
+        className="mt-2 underline hover:text-yellow-400 max-md:text-xs"
+      >
+        <div className="flex flex-col justify-center items-center">
+          <BiBuildingHouse className="" size={30} />
+
+          <p>Nos campus du Benelux</p>
+        </div>
+      </Link>
     </div>
   );
 };
