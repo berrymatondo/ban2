@@ -1,8 +1,8 @@
 "use client";
 import * as React from "react";
 import Image from "next/image";
-import toto from "../../public/toto.png";
-import toto1 from "../../public/toto1.jpg";
+import star from "../../public/star.jpg";
+import pcnc from "../../public/pcnc.jpg";
 import toto2 from "../../public/toto2.jpg";
 import toto3 from "../../public/toto3.jpg";
 import toto4 from "../../public/toto4.jpg";
@@ -34,12 +34,12 @@ import { useRouter } from "next/navigation";
 
 const images = [
   {
-    src: toto,
+    src: star,
     alt: "S.T.A.R.",
     link: "",
   },
   {
-    src: toto1,
+    src: pcnc,
     alt: "PCNC",
     link: "",
   },
