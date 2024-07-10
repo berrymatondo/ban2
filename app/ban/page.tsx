@@ -30,35 +30,43 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const images = [
   {
     src: toto,
     alt: "S.T.A.R.",
+    link: "",
   },
   {
     src: toto1,
     alt: "PCNC",
+    link: "",
   },
   {
     src: toto2,
     alt: "Soins Pastoraux",
+    link: "",
   },
   {
     src: toto3,
     alt: "Annuaire",
+    link: "",
   },
   {
     src: toto4,
-    alt: "Cellule de maison",
+    alt: "Cellules de maison",
+    link: "https://cellules.vercel.app/",
   },
   {
     src: toto5,
     alt: "Covoiturage",
+    link: "",
   },
 ];
 
 const BanPage = () => {
+  const router = useRouter();
   return (
     <div className=" flex flex-col items-center justify-center py-24">
       <div className="max-md:container flex max-md:justify-center max-md:items-center">
@@ -69,7 +77,7 @@ const BanPage = () => {
             }),
           ]}
           opts={{ align: "start", loop: true }}
-          className="w-[600px] max-md:w-[350px]"
+          className="w-[600px] max-md:w-[400px]"
         >
           <CarouselContent className="">
             {/*             {Array.from({ length: 5 }).map((_, index) => (
@@ -103,7 +111,10 @@ const BanPage = () => {
         <div className="flex w-max space-x-4 max-md:space-x-2 p-4">
           {images?.map((image, index) => (
             <figure key={index} className="shrink-0 flex flex-col items-center">
-              <div className="w-40 max-md:w-24 overflow-hidden rounded-md">
+              <div
+                onClick={() => router.push(image?.link)}
+                className="hover:cursor-pointer w-40 max-md:w-24 overflow-hidden rounded-md"
+              >
                 <Image
                   src={image.src}
                   alt={`Photo by ${image.src}`}
@@ -154,11 +165,12 @@ type CompoProps = {
   image: any;
 };
 const Compo = ({ image }: CompoProps) => {
+  const router = useRouter();
   return (
-    <div className="md:p-1 w-[600px] md:h-[400px]  max-md:w-[350px] max-md:mx-4">
+    <div className="hover:cursor-pointer md:p-1 w-[600px] md:h-[400px]  max-md:w-[400px] max-md:mx-4">
       {/*       <Image src={toto1} alt="xxxx" className="aspect-video" />
        */}{" "}
-      <Card>
+      <Card onClick={() => router.push(image?.link)}>
         <CardContent className="relative flex aspect-video items-center justify-center overflow-hidden">
           {/*           <span className="text-4xl font-semibold">{index + 1}</span>
            */}{" "}
