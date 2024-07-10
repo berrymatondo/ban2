@@ -61,7 +61,7 @@ const images = [
 const BanPage = () => {
   return (
     <div className=" flex flex-col items-center justify-center py-24">
-      <div className="flex">
+      <div className="max-md:container flex max-md:justify-center max-md:items-center">
         <Carousel
           plugins={[
             Autoplay({
@@ -95,8 +95,8 @@ const BanPage = () => {
             </CarouselItem>
           </CarouselContent> */}
 
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="max-md:hidden" />
+          <CarouselNext className="max-md:hidden" />
         </Carousel>
       </div>
       <ScrollArea className="max-md:w-full w-1/2 whitespace-nowrap rounded-md border">
