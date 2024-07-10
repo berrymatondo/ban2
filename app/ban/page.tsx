@@ -69,7 +69,7 @@ const BanPage = () => {
             }),
           ]}
           opts={{ align: "start", loop: true }}
-          className="w-[600px] "
+          className="w-[600px] max-md:w-[350px]"
         >
           <CarouselContent className="">
             {/*             {Array.from({ length: 5 }).map((_, index) => (
@@ -99,11 +99,11 @@ const BanPage = () => {
           <CarouselNext />
         </Carousel>
       </div>
-      <ScrollArea className="w-1/2 whitespace-nowrap rounded-md border">
-        <div className="flex w-max space-x-4 p-4">
+      <ScrollArea className="max-md:w-full w-1/2 whitespace-nowrap rounded-md border">
+        <div className="flex w-max space-x-4 max-md:space-x-2 p-4">
           {images?.map((image, index) => (
             <figure key={index} className="shrink-0 flex flex-col items-center">
-              <div className="w-40 overflow-hidden rounded-md">
+              <div className="w-40 max-md:w-24 overflow-hidden rounded-md">
                 <Image
                   src={image.src}
                   alt={`Photo by ${image.src}`}
@@ -118,7 +118,10 @@ const BanPage = () => {
                 </span> */}
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
-                    <Button variant="outline"> {image.alt}</Button>
+                    <Button className="max-md:text-xs" variant="outline">
+                      {" "}
+                      {image.alt}
+                    </Button>
                   </AlertDialogTrigger>
                   <AlertDialogContent>
                     <AlertDialogHeader>
@@ -152,7 +155,7 @@ type CompoProps = {
 };
 const Compo = ({ image }: CompoProps) => {
   return (
-    <div className="p-1 w-[600px] h-[400px]">
+    <div className="md:p-1 w-[600px] md:h-[400px]  max-md:w-[350px] max-md:mx-4">
       {/*       <Image src={toto1} alt="xxxx" className="aspect-video" />
        */}{" "}
       <Card>
@@ -160,9 +163,9 @@ const Compo = ({ image }: CompoProps) => {
           {/*           <span className="text-4xl font-semibold">{index + 1}</span>
            */}{" "}
           <Image src={image.src} alt="xxxx" className="absolute" />
-          <span className="text-6xl font-semibold text-white z-10">
+          <p className="text-6xl max-md:text-4xl font-semibold text-white z-10 text-center">
             {image.alt}
-          </span>
+          </p>
         </CardContent>
       </Card>
     </div>
