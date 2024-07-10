@@ -137,7 +137,9 @@ const BanPage = () => {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>Annuler</AlertDialogCancel>
-                      <AlertDialogAction>Continuer</AlertDialogAction>
+                      <AlertDialogAction className="">
+                        Continuer
+                      </AlertDialogAction>
                     </AlertDialogFooter>
                   </AlertDialogContent>
                 </AlertDialog>
